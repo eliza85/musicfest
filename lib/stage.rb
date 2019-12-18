@@ -39,8 +39,8 @@ class Stage
     @@stages.delete(self.id)
   end
 
-  def songs
+  def artists
     # binding.pry
-    Artist.find_by_album(self.id)
+    Artist.find_by_stage(self.id)
   end
 end

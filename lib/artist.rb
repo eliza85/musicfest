@@ -51,7 +51,7 @@ class Artist
     artists
   end
 
-  def stage
+  def stages
     Stage.find(self.stage_id)
   end
 

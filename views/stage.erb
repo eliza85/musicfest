@@ -1,0 +1,28 @@
+<h2>Stage Name: <%= @stage.name %></h2>
+<h5>Stage Location: <%= @stage.location %></h5>
+
+<br>
+
+<h2>Stage Artists</h2>
+
+<% if @stage.artists %>
+    <% @stage.artists.each do |artist| %>
+      <p><a href="/stages/<%= @stage.id %>/artists/<%= artist.id %>"><%= artist.name %></a></p>
+    <% end %>
+<% else %>
+  <p>There are no artists listed for this stage yet.</p>
+<% end %>
+
+<h4>Add an artist:</h4>
+
+<form action="/stages/<%= @stage.id %>/artists" method="post">
+  <div class="form-group">
+    <label for="artist_name">Artist name</label>
+    <input id="artist_name" name="artist_name" class="form-control" type="text">
+  </div>
+  <button type="submit" class="main-button">Add artist</button>
+</form>
+
+
+<p><a href="/stages/<%= @stage.id %>/edit">Edit stage</a></p>
+<a href="/stages">Return to stage list</a>
