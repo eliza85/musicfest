@@ -40,7 +40,6 @@ class Stage
   end
 
   def artists
-    # binding.pry
     Artist.find_by_stage(self.id)
   end
 end

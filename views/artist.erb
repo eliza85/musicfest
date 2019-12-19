@@ -1,5 +1,5 @@
 <h2>Artist: <%= @artist.name %></h2>
-<h3>Stage: <%= @artist.stage.name %></h3>
+<h3>Stage: <%= @artist.stage %></h3>
 
 <form action="/stages/<%= @artist.stage.id %>/artists/<%= @artist.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
